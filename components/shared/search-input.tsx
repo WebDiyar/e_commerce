@@ -71,7 +71,7 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
                                 key={product.id}
                                 className="flex items-center gap-3 w-full px-3 py-2 hover:bg-primary/10"
                                 href={`/product/${product.id}`}>
-                                <Image className="rounded-sm" src={product.imageUrl} alt={product.name} width={32} height={32}/>
+                                <Image className="rounded-sm" src={product.imageUrl} alt={product.name} width={32} height={32} />
                                 <span>{product.name}</span>
                             </Link>
                         ))}
@@ -82,3 +82,5 @@ export const SearchInput: React.FC<Props> = ({ className }) => {
         </>
     )
 }
+
+

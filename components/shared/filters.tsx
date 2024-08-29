@@ -28,7 +28,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
         <div className={className}>
             <Title text="Фильтрация" size="sm" className="mb-5 font-bold" />
 
-            {/* Верхние чекбоксы */}
+            {/* Pizza Type Filter */}
             <CheckboxFiltersGroup
                 title="Тип теста"
                 name="pizzaTypes"
@@ -41,6 +41,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
                 ]}
             />
 
+            {/* Size Filter */}
             <CheckboxFiltersGroup
                 title="Размеры"
                 name="sizes"
@@ -54,7 +55,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
                 ]}
             />
 
-            {/* Фильтр цен */}
+            {/* Price Filter */}
             <div className="mt-5 border-y border-y-neutral-100 py-6 pb-7">
                 <p className="font-bold mb-3">Цена от и до:</p>
                 <div className="flex gap-3 mb-5">
@@ -63,7 +64,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
                         placeholder="0"
                         min={0}
                         max={1000}
-                        value={String(filters.prices.priceFrom ?? 0)}  
+                        value={String(filters.prices.priceFrom ?? 0)}
                         onChange={(e) => filters.setPrices('priceFrom', Math.min(Math.max(Number(e.target.value), 0), 1000))}
                     />
                     <Input
@@ -71,7 +72,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
                         min={100}
                         max={1000}
                         placeholder="1000"
-                        value={String(filters.prices.priceTo ?? 1000)} 
+                        value={String(filters.prices.priceTo ?? 1000)}
                         onChange={(e) => filters.setPrices('priceTo', Math.min(Math.max(Number(e.target.value), 100), 1000))}
                     />
                 </div>
@@ -82,12 +83,13 @@ export const Filters: React.FC<Props> = ({ className }) => {
                     step={10}
                     value={[
                         filters.prices.priceFrom ?? 0,
-                        filters.prices.priceTo ?? 1000
+                        filters.prices.priceTo ?? 1000,
                     ]}
                     onValueChange={updatePrices}
                 />
             </div>
 
+            {/* Ingredients Filter */}
             <CheckboxFiltersGroup
                 title="Ингредиенты"
                 name="ingredients"
